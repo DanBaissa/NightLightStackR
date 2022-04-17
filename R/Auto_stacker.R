@@ -31,10 +31,5 @@ Auto_stacker <- function(path, file_type = 1, projection_CRS = "+proj=longlat +d
   # Assigns a projection to the stack
   crs(rasterstack) <- projection_CRS
 
-  # Remove any temporary files that were created
-  try(
-    file.remove("temp.tif")
-  )
-
   rasterstack
 }
