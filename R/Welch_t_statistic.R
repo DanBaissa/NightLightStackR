@@ -1,18 +1,19 @@
-# Hello, world!
-#
-# This is an example function named 'hello' 
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Install Package:           'Ctrl + Shift + B'
-#   Check Package:             'Ctrl + Shift + E'
-#   Test Package:              'Ctrl + Shift + T'
+#' Estimates the Welch t-statistic for two raster stacks
+#' @import  raster
+#' @param stack1 The base raster stack
+#' @param stack2 The raster stack to be compared with
+#' @return The Welch t-statistic for two raster stacks
+#' @export
 
-hello <- function() {
-  print("Hello, world!")
+Welch_t <- function(stack1, stack2){
+
+  # Calculate the sigma for the first and second rasters
+  sig1 <- Stack_sigma(stack1)
+  sig2 <- Stack_sigma(stack2)
+
+  # Estimates t
+  t <- (mean(stack1, na.rm = T)-mean(stack2, na.rm = T))/
+    sqrt((sig1^2/raster::nlayers(stack1)) + (sig2^2/raster::nlayers(stack2)))
+
+  t
 }
