@@ -32,9 +32,5 @@ Log_Auto_stacker <- function(path, file_type = 1, projection_CRS = "+proj=longla
   # Assigns a projection to the stack
   crs(rasterstack) <- projection_CRS
 
-  # Removes the temp file created by this process
-  try(
-    file.remove("temp.tif")
-  )
   rasterstack
 }
