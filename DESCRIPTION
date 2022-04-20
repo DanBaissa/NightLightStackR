@@ -2,7 +2,7 @@ Package: NightLightStackR
 Type: Package
 Title: Extracts and stacks NASA night lights data
 Version: 0.1.0
-Author: Daniel K Baissa, Gabriel Koehler-Derrick, & Reva Dhingra
+Author: Daniel K Baissa & Gabriel Koehler-Derrick
 Maintainer: Daniel K Baissa <dbaissa@g.harvard.edu>
 Description: Extracts and stacks NASA night lights data as well as provides some pixel by pixel statistics. 
 License: GPL-3
